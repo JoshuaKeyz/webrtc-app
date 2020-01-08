@@ -1,0 +1,61 @@
+2020-01-07T01:26:26.819+0200 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2020-01-07T01:26:26.847+0200 I CONTROL  [initandlisten] MongoDB starting : pid=2828 port=27000 dbpath=repl\db1\data\db 64-bit host=DESKTOP-VE7OI37
+2020-01-07T01:26:26.847+0200 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2020-01-07T01:26:26.848+0200 I CONTROL  [initandlisten] db version v4.0.10
+2020-01-07T01:26:26.849+0200 I CONTROL  [initandlisten] git version: c389e7f69f637f7a1ac3cc9fae843b635f20b766
+2020-01-07T01:26:26.849+0200 I CONTROL  [initandlisten] allocator: tcmalloc
+2020-01-07T01:26:26.850+0200 I CONTROL  [initandlisten] modules: none
+2020-01-07T01:26:26.851+0200 I CONTROL  [initandlisten] build environment:
+2020-01-07T01:26:26.851+0200 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2020-01-07T01:26:26.851+0200 I CONTROL  [initandlisten]     distarch: x86_64
+2020-01-07T01:26:26.851+0200 I CONTROL  [initandlisten]     target_arch: x86_64
+2020-01-07T01:26:26.855+0200 I CONTROL  [initandlisten] options: { config: "node1.conf", net: { bindIp: "localhost", port: 27000 }, security: { authorization: "enabled" }, storage: { dbPath: "repl\db1\data\db" }, systemLog: { destination: "file", logAppend: true, path: "repl\db1\data\log\node1.log" } }
+2020-01-07T01:26:26.907+0200 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1491M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2020-01-07T01:26:27.464+0200 I STORAGE  [initandlisten] WiredTiger message [1578353187:463643][2828:140719760432720], txn-recover: Set global recovery timestamp: 0
+2020-01-07T01:26:27.652+0200 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2020-01-07T01:26:28.327+0200 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: 08b483f5-2e5d-4a92-bf27-dd9fae54e509
+2020-01-07T01:26:28.778+0200 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
+2020-01-07T01:26:28.945+0200 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: 7d4de1a6-d5a9-4dd4-b495-6834640c2ed0
+2020-01-07T01:26:32.252+0200 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'repl/db1/data/db/diagnostic.data'
+2020-01-07T01:26:32.334+0200 I NETWORK  [initandlisten] waiting for connections on port 27000
+2020-01-07T01:26:32.466+0200 I COMMAND  [LogicalSessionCacheRefresh] command config.system.sessions command: listIndexes { listIndexes: "system.sessions", cursor: {}, $db: "config" } numYields:0 ok:0 errMsg:"ns does not exist: config.system.sessions" errName:NamespaceNotFound errCode:26 reslen:134 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_msg 112ms
+2020-01-07T01:26:32.467+0200 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: 71ab1412-c9fd-4779-95a6-6b5ef7ecdb74
+2020-01-07T01:26:32.874+0200 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+2020-01-07T01:26:32.875+0200 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2020-01-07T01:26:33.012+0200 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+2020-01-07T01:26:33.073+0200 I COMMAND  [LogicalSessionCacheRefresh] command config.$cmd command: createIndexes { createIndexes: "system.sessions", indexes: [ { key: { lastUse: 1 }, name: "lsidTTLIndex", expireAfterSeconds: 1800 } ], $db: "config" } numYields:0 reslen:114 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } storage:{} protocol:op_msg 590ms
+2020-01-07T01:27:36.946+0200 I NETWORK  [listener] connection accepted from 127.0.0.1:56502 #1 (1 connection now open)
+2020-01-07T01:27:36.948+0200 I ACCESS   [conn1] note: no users configured in admin.system.users, allowing localhost access
+2020-01-07T01:27:36.960+0200 I NETWORK  [conn1] received client metadata from 127.0.0.1:56502 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.0.10" }, os: { type: "Windows", name: "Microsoft Windows 10", architecture: "x86_64", version: "10.0 (build 18362)" } }
+2020-01-07T01:27:37.082+0200 I ACCESS   [conn1] Unauthorized: not authorized on admin to execute command { getLog: "startupWarnings", lsid: { id: UUID("db19bad4-9272-4ac8-b648-0d80adfb7fec") }, $db: "admin" }
+2020-01-07T01:27:37.093+0200 I ACCESS   [conn1] Unauthorized: not authorized on admin to execute command { getFreeMonitoringStatus: 1.0, lsid: { id: UUID("db19bad4-9272-4ac8-b648-0d80adfb7fec") }, $db: "admin" }
+2020-01-07T01:28:05.024+0200 I ACCESS   [conn1] Unauthorized: not authorized on admin to execute command { listCollections: 1.0, filter: {}, nameOnly: true, authorizedCollections: true, lsid: { id: UUID("db19bad4-9272-4ac8-b648-0d80adfb7fec") }, $db: "admin" }
+2020-01-07T01:28:05.033+0200 I ACCESS   [conn1] Unauthorized: not authorized on admin to execute command { find: "system.namespaces", filter: {}, lsid: { id: UUID("db19bad4-9272-4ac8-b648-0d80adfb7fec") }, $db: "admin" }
+2020-01-07T01:30:22.599+0200 I ACCESS   [conn1] Unauthorized: not authorized on admin to execute command { createUser: "joshua", pwd: "xxx", roles: [ { role: "root", db: "nodejsDB" } ], digestPassword: true, writeConcern: { w: "majority", wtimeout: 600000.0 }, lsid: { id: UUID("db19bad4-9272-4ac8-b648-0d80adfb7fec") }, $db: "admin" }
+2020-01-07T01:31:29.281+0200 I STORAGE  [conn1] createCollection: admin.system.users with generated UUID: 82f3af49-4320-4487-8633-f705c613fada
+2020-01-07T01:31:29.590+0200 I COMMAND  [conn1] command admin.system.users appName: "MongoDB Shell" command: insert { insert: "system.users", bypassDocumentValidation: false, ordered: true, $db: "admin" } ninserted:1 keysInserted:2 numYields:0 reslen:45 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { W: 3 } }, Collection: { acquireCount: { w: 2 } } } storage:{} protocol:op_msg 319ms
+2020-01-07T01:31:29.607+0200 I COMMAND  [conn1] command admin.$cmd appName: "MongoDB Shell" command: createUser { createUser: "joshua", pwd: "xxx", roles: [ "root" ], digestPassword: true, writeConcern: { w: "majority", wtimeout: 600000.0 }, lsid: { id: UUID("db19bad4-9272-4ac8-b648-0d80adfb7fec") }, $db: "admin" } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 8, w: 4 } }, Database: { acquireCount: { r: 2, W: 4 } }, Collection: { acquireCount: { r: 2, w: 3 } } } storage:{} protocol:op_msg 569ms
+2020-01-07T01:32:00.672+0200 I NETWORK  [conn1] end connection 127.0.0.1:56502 (0 connections now open)
+2020-01-07T01:32:20.723+0200 I NETWORK  [listener] connection accepted from 127.0.0.1:56503 #2 (1 connection now open)
+2020-01-07T01:32:20.724+0200 I NETWORK  [conn2] received client metadata from 127.0.0.1:56503 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.0.10" }, os: { type: "Windows", name: "Microsoft Windows 10", architecture: "x86_64", version: "10.0 (build 18362)" } }
+2020-01-07T01:32:20.931+0200 I ACCESS   [conn2] Successfully authenticated as principal joshua on admin from client 127.0.0.1:56503
+2020-01-07T01:37:32.027+0200 I ACCESS   [conn2] NoSuchKey: Missing expected field "db"
+2020-01-07T01:38:55.280+0200 I STORAGE  [conn2] createCollection: nodejsDB.info with generated UUID: f6f7df43-d943-4c73-93be-2dc6f1b89975
+2020-01-07T01:38:55.529+0200 I COMMAND  [conn2] command nodejsDB.info appName: "MongoDB Shell" command: insert { insert: "info", ordered: true, lsid: { id: UUID("e11675ff-7b4f-49f9-8f0c-a74af834068e") }, $db: "nodejsDB" } ninserted:1 keysInserted:1 numYields:0 reslen:45 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } storage:{} protocol:op_msg 248ms
+2020-01-07T01:39:51.689+0200 I COMMAND  [conn2] command nodejsDB.$cmd appName: "MongoDB Shell" command: createUser { createUser: "joshua", pwd: "xxx", roles: [ { role: "dbOwner", db: "nodejsDB" } ], digestPassword: true, writeConcern: { w: "majority", wtimeout: 600000.0 }, lsid: { id: UUID("e11675ff-7b4f-49f9-8f0c-a74af834068e") }, $db: "nodejsDB" } numYields:0 reslen:38 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { W: 3 } }, Collection: { acquireCount: { w: 3 } } } storage:{} protocol:op_msg 122ms
+2020-01-07T01:39:56.860+0200 I NETWORK  [conn2] end connection 127.0.0.1:56503 (0 connections now open)
+2020-01-07T01:42:22.213+0200 I NETWORK  [listener] connection accepted from 127.0.0.1:56504 #3 (1 connection now open)
+2020-01-07T01:42:22.215+0200 I NETWORK  [conn3] received client metadata from 127.0.0.1:56504 conn3: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.0.10" }, os: { type: "Windows", name: "Microsoft Windows 10", architecture: "x86_64", version: "10.0 (build 18362)" } }
+2020-01-07T01:42:22.294+0200 I ACCESS   [conn3] Successfully authenticated as principal joshua on admin from client 127.0.0.1:56504
+2020-01-07T02:09:26.364+0200 I NETWORK  [conn3] end connection 127.0.0.1:56504 (0 connections now open)
+2020-01-07T02:09:34.657+0200 I CONTROL  [thread4] CTRL_CLOSE_EVENT signal
+2020-01-07T02:09:34.658+0200 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2020-01-07T02:09:34.658+0200 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2020-01-07T02:09:34.660+0200 I CONTROL  [consoleTerminate] Shutting down free monitoring
+2020-01-07T02:09:34.660+0200 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2020-01-07T02:09:34.690+0200 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2020-01-07T02:09:34.690+0200 I STORAGE  [consoleTerminate] Shutting down session sweeper thread
+2020-01-07T02:09:34.691+0200 I STORAGE  [consoleTerminate] Finished shutting down session sweeper thread
+2020-01-07T02:09:35.546+0200 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2020-01-07T02:09:35.548+0200 I CONTROL  [consoleTerminate] now exiting
+2020-01-07T02:09:35.549+0200 I CONTROL  [consoleTerminate] shutting down with code:12
